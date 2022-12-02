@@ -66,6 +66,6 @@
   
   ;; 5A. Test your implementation of Part 1
   (part-2 test-input)
-  (aoc/update-indicator! "2" (part-1 test-input))
-  (aoc/update-indicator! "2" (part-1 real-input))
+  (aoc/update-indicator! "2" (part-2 test-input))
+  (aoc/update-indicator! "2" (part-2 real-input))
   :rcf)
