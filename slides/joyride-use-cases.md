@@ -24,5 +24,5 @@
 </div>
 <div class="footer">
 
-[< aoc](./joyride-aoc.md) | [api >](./joyride-api.md) | [AOC Template](https://github.com/PEZ/joyride-aoc) | [Joyride Presentation and Examples](https://github.com/PEZ/london-clojurians-joyride)
+[< aoc](./joyride-aoc.md) | [api >](./joyride-api.md) | [AOC Template](https://github.com/PEZ/joyride-aoc-2022) | [Joyride Presentation and Examples](https://github.com/PEZ/london-clojurians-joyride)
 </div>

@@ -31,5 +31,5 @@
 </div>
 <div class="footer">
 
-[< joyride use cases](./joyride-use-cases.md) | [AOC Template](https://github.com/PEZ/joyride-aoc) | [Joyride Presentation and Examples](https://github.com/PEZ/london-clojurians-joyride)
+[< joyride use cases](./joyride-use-cases.md) | [AOC Template](https://github.com/PEZ/joyride-aoc-2022) | [Joyride Presentation and Examples](https://github.com/PEZ/london-clojurians-joyride)
 </div>
