@@ -24,6 +24,9 @@
   ;; 2. Fetch your Day 1 input (If you haven't, see README
   ;; for how to get make your browser session available to the REPL)
   (def real-input (aoc/fetched-input))
+  ;; 2.1 Now you can look at this input by evaluating the `real-input` symbol
+  ;;     Place the cursor in, or adjacent to, the symbol and:
+  ;;     Use the command: Calva: Evaluate current form (ctrl+enter)
 
   ;; 3. Give yourself some test input (copied from AOC Day 1)
   (def test-input [1000
@@ -44,7 +47,8 @@
   ;; 4B. Implement part-1, this function should evaluate to (return)
   ;;     your answer when called with `input`
   ;;     (a list of numbers or `nil`s in the case of Day 1).
-  ;;     You can try 4A without editing this first, if you like.
+  ;;     First evaluate the current implementation.
+  ;;     You can try it out without editing this first, if you like.
   ;;     (That's why the numbering is a bit funny. 😀)
   (defn part-1 [input]
     (first input) ; <- Probably the wrong answer
