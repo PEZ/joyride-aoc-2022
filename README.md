@@ -2,7 +2,7 @@
 
 See this presentation with demo about what [Joyride](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.joyride) is and can do:
 
-[![](etc/London%20Clojurians%20Video%20Image.png)](https://www.youtube.com/watch?v=ObjIR08t3lg)
+[![](https://github.com/PEZ/london-clojurians-joyride/raw/master/etc/London%20Clojurians%20Video%20Image.png)](https://www.youtube.com/watch?v=ObjIR08t3lg)
 
 * TL:DR; It's en extension that lets you script VS Code like Emacs.
 * Examples from that demo, with instructions: https://github.com/PEZ/london-clojurians-joyride
