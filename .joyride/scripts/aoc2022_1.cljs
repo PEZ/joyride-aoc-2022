@@ -41,23 +41,26 @@
                    nil
                    10000])
 
-  ;; 4A. Implement part-1, this function should evaluate to (return)
-  ;;    your answer when called with `input`
-  ;;    (a list of numbers or `nil`s in the case of Day 1).
-  ;;    You can try 4B without editing this first, if you like.
+  ;; 4B. Implement part-1, this function should evaluate to (return)
+  ;;     your answer when called with `input`
+  ;;     (a list of numbers or `nil`s in the case of Day 1).
+  ;;     You can try 4A without editing this first, if you like.
+  ;;     (That's why the numbering is a bit funny. 😀)
   (defn part-1 [input]
     (first input) ; <- Probably the wrong answer
     )
 
-  ;; 4B. Test your implementation
+  ;; 4A. Test your implementation of Part 1
   (part-1 test-input)
   (aoc/update-indicator! "1" (part-1 test-input))
   (aoc/update-indicator! "1" (part-1 real-input))
 
+  ;; 5B. Implement part-2
   (defn part-2 [input]
     (last input) ; <- Good try, but wrong!
     )
   
+  ;; 5A. Test your implementation of Part 1
   (part-2 test-input)
   (aoc/update-indicator! "2" (part-1 test-input))
   (aoc/update-indicator! "2" (part-1 real-input))
