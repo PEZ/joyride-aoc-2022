@@ -1,8 +1,8 @@
 # Use VS Code and Joyride for Advent of Code 2022
 
-[Joyride](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.joyride) is en extension that lets you script VS Code like Emacs can be scripted. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though, but [Clojure](https://clojure.org).
+[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs can be scripted. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though, but [Clojure](https://clojure.org).
 
-![Joyride A Clojure REPL for VS Code](slides/images/joyride-logo-w-tagline-600w.png)
+[![Joyride A Clojure REPL for VS Code](slides/images/joyride-logo-w-tagline-600w.png)](https://github.com/BetterThanTomorrow/joyride)
 
 ## How to Joyride AOC 2022 with VS Code
 
