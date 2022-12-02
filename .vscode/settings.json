@@ -1,0 +1,38 @@
+{
+    "cSpell.language": "en",
+    "cSpell.allowCompoundWords": true,
+    "zenMode.hideTabs": false,
+    "zenMode.hideStatusBar": false,
+    "zenMode.centerLayout": false,
+    "workbench.statusBar.visible": true,
+    "window.zoomLevel": 3,
+    "markdown.preview.fontSize": 24,
+    "markdown.preview.scrollPreviewWithEditor": false,
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.markEditorSelection": false,
+    "markdown.preview.typographer": true,
+    "markdown.styles": [
+        "slides/style.css"
+    ],
+    "errorLens.enabled": false,
+    "screencastMode.keyboardShortcutsFormat": "commandWithGroup",
+    "calva.definitionProviderPriority": [
+        "lsp",
+        "repl"
+    ],
+    "gitlens.statusBar.enabled": false,
+    "gitlens.statusBar.pullRequests.enabled": false,
+    "gitlens.graph.statusBar.enabled": false,
+    "gitlens.mode.statusBar.enabled": false,
+    "calva.prettyPrintingOptions": {
+        "printEngine": "pprint",
+        "enabled": true,
+        "width": 50,
+        "maxLength": 50
+    },
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "zenMode.silentNotifications": false,
+    "screencastMode.verticalOffset": 80,
+    "editor.hover.delay": 1300,
+    "editor.quickSuggestionsDelay": 1300,
+}

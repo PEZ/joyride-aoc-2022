@@ -1,0 +1,27 @@
+# vs code
+*.vsix
+
+# Dependency directories
+node_modules
+
+# macos
+.DS_Store
+
+# Clojure
+.cpcache/
+.nrepl-port
+
+# CLJS
+.shadow-cljs/
+
+# Calva
+.cache
+/.portal/vs-code.edn
+.calva/output-window/
+
+.portal
+.clj-kondo/cache/
+.lsp/cache/
+
+# Secrets
+.aoc-session

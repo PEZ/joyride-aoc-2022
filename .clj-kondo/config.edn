@@ -1,0 +1,4 @@
+{:lint-as {promesa.core/let clojure.core/let
+           promesa.core/-> clojure.core/->
+           util-aoc/defp clojure.core/def
+           util-aoc/def-promise-value clojure.core/def}}
