@@ -9,18 +9,23 @@
 ;;    * Calva: Load/Evaluate File (ctrl+alt+c enter)
 ;; 3. Then also load this file in the REPL
 ;; 4  Then evaluate the top level forms in the Rich Comment form
-;;    (comment ...) below, in the order they appear
+;;    (comment ...) below, in the order they appear.
+;;
+;;    To evaluate a top level form, place the cursor somewhere
+;;    in the form and use the command:
+;;    * Calva: Evaluate Current Form (alt+enter)
 
 (comment
-  ;; Initialize this AOC day, creates a statusbar item
+  ;; 1. Initialize this AOC day, creates a statusbar item
+  ;;    (alt+enter with the cursor in, or adjacent to, the form below)
   (aoc/set-day! 1)
-  ;; You can click the item in to open the AOC site on day 1
-  
-  ;; Fetch your Day 1 input (If you haven't, first see README
-  ;; for how to get your browser session here)
+  ;; You can now click the item to open the AOC site on day 1
+
+  ;; 2. Fetch your Day 1 input (If you haven't, see README
+  ;; for how to get make your browser session available to the REPL)
   (def real-input (aoc/fetched-input))
 
-  ;; Give yourself some test input (copied from AOC Day 1)
+  ;; 3. Give yourself some test input (copied from AOC Day 1)
   (def test-input [1000
                    2000
                    3000
@@ -36,23 +41,23 @@
                    nil
                    10000])
 
+  ;; 4A. Implement part-1, this function should evaluate to (return)
+  ;;    your answer when called with `input`
+  ;;    (a list of numbers or `nil`s in the case of Day 1).
+  ;;    You can try 4B without editing this first, if you like.
   (defn part-1 [input]
-    (->> input
-         (partition-by nil?)
-         (map (partial apply +))
-         (apply max)))
+    (first input) ; <- Probably the wrong answer
+    )
 
-  (defn part-2 [input]
-    (->> input
-         (partition-by nil?)
-         (map (partial apply +))
-         (sort >)
-         (take 3)
-         (apply +)))
-
+  ;; 4B. Test your implementation
   (part-1 test-input)
   (aoc/update-indicator! "1" (part-1 test-input))
   (aoc/update-indicator! "1" (part-1 real-input))
+
+  (defn part-2 [input]
+    (last input) ; <- Good try, but wrong!
+    )
+  
   (part-2 test-input)
   (aoc/update-indicator! "2" (part-1 test-input))
   (aoc/update-indicator! "2" (part-1 real-input))
