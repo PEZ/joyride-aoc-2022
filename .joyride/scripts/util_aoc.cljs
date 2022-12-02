@@ -92,8 +92,6 @@
   (p/let [indicator (vscode/window.createStatusBarItem
                 vscode/StatusBarAlignment.Left
                 -1000)]
-    (def day day)
-    (def indicator indicator)
     (set! (.-text indicator) (str "Day " day ": <go-for-it>"))
     (set! (.-tooltip indicator) (str "Advent of Code 2022, day, " day ". Waiting for you to test your solution..."))
     (set! (.-command indicator)
@@ -106,7 +104,6 @@
   [d]
   (p/let [input (values+ d)
           indicator (create-indicator! d)]
-    (def xindicator indicator)
     (println "setting day" d "!")
     (swap! !state assoc
            :day d
