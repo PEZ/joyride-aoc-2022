@@ -28,7 +28,7 @@ Two VS Code extensions:
 * [Joyride](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.joyride) - The scripting environment, which includes Clojure and an nREPL server
 * [Calva](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva) - A Clojure IDE, which includes an nREPL client
 
-Don't worry if you don't have a clue what nREPL is, I won't even link to it here. What it means that you will have both a server and a client is that you don't need anything else to program in Clojure. (You might object that Node is needed in the list above, but it is only needed to install some npm modules that the utility script (somewhat unnecessarily) depends on.)
+Don't worry if you don't have a clue what nREPL is, I won't even link to it here. What ”you will have both a server and a client” means for you is that you don't need anything else to program in Clojure. (You might object that Node is needed in the list above, but it is only needed to install some npm modules that the utility script (somewhat unnecessarily) depends on.)
 
 ### Install node module dependencies
 
