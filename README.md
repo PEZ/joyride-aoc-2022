@@ -30,6 +30,16 @@ Two VS Code extensions:
 
 Don't worry if you don't have a clue what nREPL is, I won't even link to it here. What it means that you will have both a server and a client is that you don't need anything else to program in Clojure. (You might object that Node is needed in the list above, but it is only needed to install some npm modules that the utility script (somewhat unnecessarily) depends on.)
 
+### Install node module dependencies
+
+The AOC utilities script relies on two npm modules, `requestify` and `open`. From the root of the project:
+
+```sh
+$ cd .joyride
+$ npm i
+$ cd ..
+```
+
 ### Make your AOC browser extension avaliable to your scripts
 
 To use the utility for downloading your AOC problems input, you will need to login to your AOC account and make that session available to the Joyride scripts. The utility script assumes a file named `.aoc-session` in the workspace root. This file should contain only the contents of the `session` cookie from the browser's session. A way to get at this cookie is:
