@@ -1,6 +1,6 @@
 # Use VS Code and Joyride for Advent of Code 2022
 
-[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs users script emacs. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though. Instead something much nicer: [Clojure](https://clojure.org).
+[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs users script Emacs. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though. Instead something much nicer: [Clojure](https://clojure.org).
 
 [![Using VS Code for Solving Advent of Code, demo @ Agical](slides/images/Advent%20of%20Code%20Day%201%20at%20Agical%20VS%20Code%20Play.png)](https://www.youtube.com/watch?v=0rJvOtbJDyI)
 
