@@ -42,7 +42,6 @@ To use the utility for downloading your AOC problems input, you will need to log
 5. Look for the cookies in the request headers.
 6. Copy the content (right click -> copy)
 7. Paste the contents into the file `.aoc-session`
-8. Clean away everything except the content of the cookie named `session`. Everything. So `session=` and any `;` and newlines should be removed. (It is pretty easy to update the utility functions to do this cleaning for you, but it is not done yet.) You should have one line with only hex didgits in this file when you are done.)
 
 ### Open the Day one problem script
 

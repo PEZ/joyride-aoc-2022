@@ -42,7 +42,10 @@
     (vscode/env.openExternal (str "https://adventofcode.com/2022/day/" day))))
 
 (defn- fetch-input'+ [day]
-  (-> (p/let [cookie (slurp-ws-file+ ".aoc-session")
+  (-> (p/let [session-file-content (slurp-ws-file+ ".aoc-session")
+              cookie (if (re-find #"session=" session-file-content)
+                       (second (re-find #"session=([0-9a-fA-F]+)" session-file-content))
+                       session-file-content)
               get+ (node-util/promisify https/get)
               incoming-message (get+ #js {:hostname "adventofcode.com"
                                           ;:hostname "localhost"
