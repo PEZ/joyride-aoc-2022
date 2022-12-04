@@ -1,7 +1,7 @@
 (ns util-aoc
-  (:require ["vscode" :as vscode]
-            ["requestify" :as fetch]
-            ["open" :as open]
+  (:require ["https" :as https]
+            ["util" :as node-util]
+            ["vscode" :as vscode]
             [clojure.edn :as edn]
             [promesa.core :as p]
             [clojure.string :as string]))
@@ -38,18 +38,36 @@
                     "Yes, please")]
       (when choice
         (-> (vscode/env.clipboard.writeText (str answer))
-            (.then #(open (str "https://adventofcode.com/2022/day/" day))))))
-    (open (str "https://adventofcode.com/2022/day/" day))))
+            (.then #(vscode/env.openExternal (str "https://adventofcode.com/2022/day/" day))))))
+    (vscode/env.openExternal (str "https://adventofcode.com/2022/day/" day))))
 
+(comment
+  (require '["http" :as http])
+  :rcf)
 (defn- fetch-input'+ [day]
   (-> (p/let [cookie (slurp-ws-file+ ".aoc-session")
-              response (.get requestify
-                             (str "https://adventofcode.com/2022/day/" day "/input")
-                             #js {:cookies #js {:session cookie}})]
-        (.getBody response))
-      (p/catch (fn [e]
-                 (println "Ho, ho, ho! Did you forget to populate `.aoc-session` with your AOC session cookie?" e)
-                 (throw (js/Error. e))))))
+              get+ (node-util/promisify https/get)
+              incoming-message (get+ #js {:hostname "adventofcode.com"
+                                          ;:hostname "localhost"
+                                          :method "GET"
+                                          :port 443
+                                          :path (str "/2022/day/" day "/input")
+                                          :headers #js {:Cookie (str "session=" cookie)}})
+              data (.read incoming-message)
+              input (.toString data)]
+        input)
+      ;; TODO: No idea why this ends up in the p/catch clause!
+      (p/catch (fn [x]
+                (if (> (.-statusCode x) 300)
+                  (do (println "Ho, ho, ho! Did you forget to populate `.aoc-session` with your AOC session cookie?" x)
+                      (throw (js/Error. x)))
+                  (p/let [data (.read x)
+                          input (.toString data)]
+                    input))))))
+
+(comment
+  (fetch-input'+ 1)
+  :rcf)
 
 (def fetch-input+
   (memoize fetch-input'+))
@@ -67,10 +85,17 @@
   "Returns (resolves to) the input for `day` as
    a sequence of values (if they parse as proper EDN)"
   [day]
-  (p/let [values (fetch-input+ day)]
-    (->> values
-         (string/split-lines)
-         (map read-string-or-string))))
+  (-> (p/let [values (fetch-input+ day)]
+        (->> values
+             (string/split-lines)
+             (map read-string-or-string)))
+      (p/catch (fn [e]
+                 (println "Ho ho ho!" day e)
+                 (println e)))))
+
+(comment
+  (values+ 1)
+  :rcf)
 
 (defn update-indicator!
   [part answer]
@@ -102,9 +127,9 @@
 
 (defn set-day!
   [d]
-  (p/let [input (values+ d)
-          indicator (create-indicator! d)]
-    (println "setting day" d "!")
+  (p/let [indicator (create-indicator! d)
+          input (values+ d)]
+    (println "Initializing day" (str d "!"))
     (swap! !state assoc
            :day d
            :input input
@@ -118,8 +143,7 @@
 (comment
   (slurp-ws-file+ ".aoc-session")
   (values+ 1)
-  (fetch-input+ 1)
-  (fetch-input'+ 1)
+  @!state
   (set-day! 1)
   (create-indicator! 1)
   :rcf)

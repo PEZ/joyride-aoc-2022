@@ -28,7 +28,7 @@
         "printEngine": "pprint",
         "enabled": true,
         "width": 50,
-        "maxLength": 50
+        "maxLength": 100
     },
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "zenMode.silentNotifications": false,

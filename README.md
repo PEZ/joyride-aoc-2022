@@ -21,7 +21,6 @@ This is a template repository to make it quick and easy to get started using VS 
 * Curiosity
 * VS Code, [with enough knowledge of how to use it, find commands and such](https://code.visualstudio.com/docs/introvideos/basics)
 * A copy of this repository opened in VS Code
-* Node/node.js
 
 ### What you need to add
 
@@ -31,16 +30,6 @@ Two VS Code extensions:
 * [Calva](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva) - A Clojure IDE, which includes an nREPL client
 
 Don't worry if you don't have a clue what nREPL is, I won't even link to it here. What ”you will have both a server and a client” means for you is that you don't need anything else to program in Clojure. (You might object that Node is needed in the list above, but it is only needed to install some npm modules that the utility script (somewhat unnecessarily) depends on.)
-
-### Install node module dependencies
-
-The AOC utilities script relies on two npm modules, `requestify` and `open`. From the root of the project:
-
-```sh
-$ cd .joyride
-$ npm i
-$ cd ..
-```
 
 ### Make your AOC browser extension avaliable to your scripts
 
