@@ -1,12 +1,14 @@
 # Use VS Code and Joyride for Advent of Code 2022
 
-[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs can be scripted. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though, but [Clojure](https://clojure.org).
+[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs users script emacs. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though. Instead something much nicer: [Clojure](https://clojure.org).
 
-[![Joyride A Clojure REPL for VS Code](slides/images/joyride-logo-w-tagline-600w.png)](https://github.com/BetterThanTomorrow/joyride)
+[![Using VS Code for Solving Advent of Code, demo @ Agical](slides/images/Advent%20of%20Code%20Day%201%20at%20Agical%20VS%20Code%20Play.png)](https://www.youtube.com/watch?v=0rJvOtbJDyI)
 
-## How to Joyride AOC 2022 with VS Code
+^ Demo using this starter template ^
 
-This is a template repository containing the following ingredients so that you can use VS Code and Clojure to solve [Advent of Code](https://adventofcode.com/) problems:
+## How to Joyride use this project
+
+This is a template repository to make it quick and easy to get started using VS Code and Clojure to solve [Advent of Code](https://adventofcode.com/) problems.
 
 ### What's included
 
@@ -67,7 +69,6 @@ See this presentation with demo about what [Joyride](https://marketplace.visuals
 
 [![](https://github.com/PEZ/london-clojurians-joyride/raw/master/etc/London%20Clojurians%20Video%20Image.png)](https://www.youtube.com/watch?v=ObjIR08t3lg)
 
-* TL:DR; 
 * Examples from that demo, with instructions: https://github.com/PEZ/london-clojurians-joyride
 * Demo: https://www.youtube.com/watch?v=ObjIR08t3lg
 * Joyride repository: https://github.com/BetterThanTomorrow/joyride
