@@ -6,7 +6,7 @@
 
 ^ Demo using this starter template ^
 
-## How to Joyride use this project
+## How to use this project
 
 This is a template repository to make it quick and easy to get started using VS Code and Clojure to solve [Advent of Code](https://adventofcode.com/) problems.
 
