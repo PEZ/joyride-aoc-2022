@@ -19,9 +19,9 @@ This is a template repository to make it quick and easy to get started using VS 
 ### Prerequisites
 
 * Curiosity
-* VS Code
+* VS Code, [with enough knowledge of how to use it, find commands and such](https://code.visualstudio.com/docs/introvideos/basics)
 * A copy of this repository opened in VS Code
-* Node
+* Node/node.js
 
 ### What you need to add
 
@@ -46,7 +46,7 @@ $ cd ..
 
 To use the utility for downloading your AOC problems input, you will need to login to your AOC account and make that session available to the Joyride scripts. The utility script assumes a file named `.aoc-session` in the workspace root. This file should contain only the contents of the `session` cookie from the browser's session. A way to get at this cookie is:
 
-1. Open the dev console when you are logged in at adventofcode.com
+1. Open the browser development console when you are logged in at https://adventofcode.com
 2. Open the Networks tab
 3. Reload the page
 4. Click the resource you have reloaded, (`1` if it was the Day 1 problem page)

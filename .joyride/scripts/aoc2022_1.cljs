@@ -5,6 +5,7 @@
 ;; 0. Install the extensions Joyride and Calva
 ;; 1. Start and connect the Joyride nREPL server
 ;;    * Calva: Start Joyride REPL and Connect
+;;      ^ You find this command in the Command Palette (F1)    
 ;; 2. Open the file `util_aoc.cljs` and load it in the REPL
 ;;    * Calva: Load/Evaluate File (ctrl+alt+c enter)
 ;; 3. Then also load this file in the REPL
