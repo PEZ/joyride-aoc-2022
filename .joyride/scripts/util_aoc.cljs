@@ -41,9 +41,6 @@
             (.then #(vscode/env.openExternal (str "https://adventofcode.com/2022/day/" day))))))
     (vscode/env.openExternal (str "https://adventofcode.com/2022/day/" day))))
 
-(comment
-  (require '["http" :as http])
-  :rcf)
 (defn- fetch-input'+ [day]
   (-> (p/let [cookie (slurp-ws-file+ ".aoc-session")
               get+ (node-util/promisify https/get)
@@ -56,7 +53,7 @@
               data (.read incoming-message)
               input (.toString data)]
         input)
-      ;; TODO: No idea why this ends up in the p/catch clause!
+      ;; TODO: No idea why this ends up in the p/catch!
       (p/catch (fn [x]
                 (if (> (.-statusCode x) 300)
                   (do (println "Ho, ho, ho! Did you forget to populate `.aoc-session` with your AOC session cookie?" x)
@@ -67,6 +64,7 @@
 
 (comment
   (fetch-input'+ 1)
+  (require '["http" :as http])
   :rcf)
 
 (def fetch-input+
