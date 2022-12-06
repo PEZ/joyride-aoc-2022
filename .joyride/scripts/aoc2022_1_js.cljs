@@ -1,5 +1,12 @@
-(ns aoc2022-1
-  (:require [aoc.util :as aoc]))
+(ns aoc2022-1-js
+  (:require [aoc.util :as aoc])
+  (:require ["../src/aoc/day-1.js" :as day-1] :reload)
+  )
+
+;; Joyride AOC part 1 control panel for JavaScript developers
+;; This file requires a JavaScript file for the implementation
+;; of the solutions. So you can stick to familiar ground
+;; and just use this file as a command panel.
 
 ;; ## How to use this template
 ;; 0. Install the extensions Joyride and Calva
@@ -8,7 +15,7 @@
 ;;      ^ You find this command in the Command Palette (F1)    
 ;; 2. Load this file in the REPL
 ;;    * Calva: Load/Evaluate File (ctrl+alt+c enter)
-;; 3  Then evaluate the top level forms in the Rich Comment form
+;; 3  Then evaluate the top level forms inside the Rich Comment form
 ;;    (comment ...) below, in the order they appear.
 ;;
 ;;    You can think of a "form" as either a literal, a symbol
@@ -22,7 +29,8 @@
 
 (comment
   ;; 1. Initialize this AOC day, creates a statusbar item
-  ;;    (alt+enter with the cursor in, or adjacent to, the form below)
+  ;;    (alt+enter with the cursor in, or adjacent to,
+  ;;     the form below, which is a top-level form)
   (aoc/set-day! 1)
   ;; You can now click the item to open the AOC site on day 1
 
@@ -56,21 +64,27 @@
   ;;     You can try it out without editing this first, if you like.
   ;;     (That's why the numbering is a bit funny. 😀)
   (defn part-1 [input]
-    (first input) ; <- Probably the wrong answer
+    (day-1/part_1 (clj->js input)) ; <- Implement in ../src/aoc/day-1.js
     )
+  ;; Every time you have 
 
   ;; 4A. Test your implementation of Part 1
-  (part-1 test-input)
+  ;; Check the status bar indicator before and after evaluating
+  ;; this top-level form. The indicator button will change title.
+  ;; And clicking it will offer to copy the answer to the clipboard
+  ;; and take you to Day 1 on the AOC site, where you can paste it.
   (aoc/update-indicator! "1" (part-1 test-input))
+  
+  ;; Of course, you want to copy and paste the answer when using
+  ;; `real-input` instead:
   (aoc/update-indicator! "1" (part-1 real-input))
 
   ;; 5B. Implement part-2
   (defn part-2 [input]
-    (last input) ; <- Good try, but wrong!
+    (day-1/part_2 (clj->js input)) ; <- Implement in ../src/aoc/day-1.js
     )
-  
+
   ;; 5A. Test your implementation of Part 1
-  (part-2 test-input)
   (aoc/update-indicator! "2" (part-2 test-input))
   (aoc/update-indicator! "2" (part-2 real-input))
   :rcf)

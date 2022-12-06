@@ -1,10 +1,12 @@
 # Use VS Code and Joyride for Advent of Code 2022
 
-[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs users script Emacs. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though. Instead something much nicer: [Clojure](https://clojure.org).
+[Joyride](https://github.com/BetterThanTomorrow/joyride) is en extension that lets you script VS Code like Emacs users script Emacs. Like with Emacs the scripting language is a LISP, making the programming fully interactive. The language is not ELisp, though. Instead something much nicer: [Clojure](https://clojure.org). Or, something more familiar to some of you: JavaScript.
 
 [![Using VS Code for Solving Advent of Code, demo @ Agical](slides/images/Advent%20of%20Code%20Day%201%20at%20Agical%20VS%20Code%20Play.png)](https://www.youtube.com/watch?v=0rJvOtbJDyI)
 
 ^ Demo using this starter template ^
+
+In the demo I use Clojure for solving Day 1. But you can use JavaScript if you like. Take a look at [.joyride/scripts/aoc2022_1_js.cljs](.joyride/scripts/aoc2022_1_js.cljs) and [.joyride/src/aoc/day-1.js](.joyride/src/aoc/day-1.js)which form a scaffold for how to do this.
 
 ## How to use this project
 
@@ -47,9 +49,15 @@ To use the utility for downloading your AOC problems input, you will need to log
 
 In VS Code that is.
 
-* [.joyride/scripts/aoc2022_1.cljs](.joyride/scripts/aoc2022_1.cljs)
+Depending on if you are going to solve the puzzle in Clojure or JavaScript
 
-Follow the instructions in this file
+* **Clojure**:
+    * [.joyride/scripts/aoc2022_1.cljs](.joyride/scripts/aoc2022_1.cljs)
+* **JavaScript**:
+    * [.joyride/scripts/aoc2022_1_js.cljs](.joyride/scripts/aoc2022_1_js.cljs) 
+    * [.joyride/src/aoc/day-1.js](.joyride/src/aoc/day-1.js)
+
+Then follow the instructions in the files.
 
 ## Joyride demo and repo with instructions
 

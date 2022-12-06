@@ -1,4 +1,4 @@
-(ns util-aoc
+(ns aoc.util
   (:require ["https" :as https]
             ["util" :as node-util]
             ["vscode" :as vscode]
