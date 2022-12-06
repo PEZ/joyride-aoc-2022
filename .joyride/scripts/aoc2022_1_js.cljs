@@ -66,7 +66,10 @@
   (defn part-1 [input]
     (day-1/part_1 (clj->js input)) ; <- Implement in ../src/aoc/day-1.js
     )
-  ;; Every time you have 
+  ;; Every time you have updated the JavaScript code, do the following
+  ;; to use the new definition:
+  ;; 1. Reload this file in the REPL (ctrl+alt+c enter)
+  ;; 2. Re-evaluate the above top-level form (defn part-1 ...)
 
   ;; 4A. Test your implementation of Part 1
   ;; Check the status bar indicator before and after evaluating
