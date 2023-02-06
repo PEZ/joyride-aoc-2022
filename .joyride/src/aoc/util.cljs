@@ -30,6 +30,39 @@
                  (println "Ho, ho, ho! File not found:" ws-file e)
                  (throw (js/Error. e))))))
 
+(defn- fetch-as-authed+ [path]
+  (-> (p/let [session-file-content (slurp-ws-file+ ".aoc-session")
+              cookie (if (re-find #"session=" session-file-content)
+                       (second (re-find #"session=([0-9a-fA-F]+)" session-file-content))
+                       session-file-content)
+              get+ (node-util/promisify https/get)
+              incoming-message (get+ #js {:hostname "adventofcode.com"
+                                          ;:hostname "localhost"
+                                          :method "GET"
+                                          :port 443
+                                          :path path
+                                          :headers #js {:Cookie (str "session=" cookie)}})
+              data (.read incoming-message)
+              text (.toString data)]
+        text)
+      ;; TODO: No idea why this ends up in the p/catch!
+      (p/catch (fn [x]
+                 (if (> (.-statusCode x) 300)
+                   (do (println "Ho, ho, ho! Did you forget to populate `.aoc-session` with your AOC session cookie?" x)
+                       (throw (js/Error. x)))
+                   (p/let [data (.read x)
+                           text (.toString data)]
+                     text))))))
+
+(defn- fetch-puzzle+ [day]
+  (fetch-as-authed+ (str "/2022/day/" day)))
+
+(comment
+  (p/let [puzzle (fetch-puzzle+ 1)]
+    (swap! !state assoc :puzzle-html puzzle))
+  @!state
+  :rcf)
+
 #_{:clj-kondo/ignore [:unused-private-var]}
 (defn- open-aoc-day! [day answer]
   (if answer
@@ -42,28 +75,7 @@
     (vscode/env.openExternal (str "https://adventofcode.com/2022/day/" day))))
 
 (defn- fetch-input'+ [day]
-  (-> (p/let [session-file-content (slurp-ws-file+ ".aoc-session")
-              cookie (if (re-find #"session=" session-file-content)
-                       (second (re-find #"session=([0-9a-fA-F]+)" session-file-content))
-                       session-file-content)
-              get+ (node-util/promisify https/get)
-              incoming-message (get+ #js {:hostname "adventofcode.com"
-                                          ;:hostname "localhost"
-                                          :method "GET"
-                                          :port 443
-                                          :path (str "/2022/day/" day "/input")
-                                          :headers #js {:Cookie (str "session=" cookie)}})
-              data (.read incoming-message)
-              input (.toString data)]
-        input)
-      ;; TODO: No idea why this ends up in the p/catch!
-      (p/catch (fn [x]
-                (if (> (.-statusCode x) 300)
-                  (do (println "Ho, ho, ho! Did you forget to populate `.aoc-session` with your AOC session cookie?" x)
-                      (throw (js/Error. x)))
-                  (p/let [data (.read x)
-                          input (.toString data)]
-                    input))))))
+  (fetch-as-authed+ (str "/2022/day/" day "/input")))
 
 (comment
   (fetch-input'+ 1)
@@ -107,7 +119,7 @@
                "Want to check if " answer " is the correct answer for your input?"))
     (set! (.-command indicator)
           #js {:command "joyride.runCode"
-               :arguments #js [(str "(util-aoc/open-aoc-day! " 
+               :arguments #js [(str "(aoc.util/open-aoc-day! " 
                                     day " " answer")")]})
     answer))
 
@@ -122,7 +134,7 @@
     (set! (.-tooltip indicator) (str "Advent of Code 2022, day, " day ". Waiting for you to test your solution..."))
     (set! (.-command indicator)
           #js {:command "joyride.runCode"
-               :arguments #js [(str "(util-aoc/open-aoc-day! " day ")")]})
+               :arguments #js [(str "(aoc.util/open-aoc-day! " day ")")]})
     (.show indicator)
     indicator))
 
